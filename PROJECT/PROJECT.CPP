@@ -181,7 +181,7 @@ int main()
                 }
                 else
                 {
-                    cout << "No data.\n";
+                    cout << "No data\n";
                 }
             }
 
@@ -189,11 +189,11 @@ int main()
             {
                 if (count > 0)
                 {
-                    cout << "Last: " << customerNames[count - 1] << endl;
+                    cout << "last: " << customerNames[count - 1] << endl;
                 }
                 else
                 {
-                    cout << "No data.\n";
+                    cout << "no data\n";
                 }
             }
 
