@@ -151,6 +151,8 @@ int main()
             }
 
             // sort by statuss
+            //Sorting whole strings using dictionary order, so "done" will come before "waiting"
+            
             else if (choice == 8)
             {
                 for (int i = 0; i < count - 1; i++)
