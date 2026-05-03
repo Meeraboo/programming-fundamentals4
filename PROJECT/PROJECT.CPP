@@ -3,6 +3,9 @@ using namespace std;
 
 int main()
 {
+    cout << "-----------------------------------------\n";
+    cout << "|   WELCOME TO THE CUSTOMER MANAGEMENT   |\n";
+    cout << "-----------------------------------------\n";
 
     string customerNames[100];
     string services[100];
@@ -96,7 +99,7 @@ int main()
                     cout << "Not found!\n";
                 }
             }
-
+            // waiting
             else if (choice == 5)
             {
                 for (int i = 0; i < count; i++)
@@ -108,6 +111,7 @@ int main()
                 }
             }
 
+            // Completed
             else if (choice == 6)
             {
                 for (int i = 0; i < count; i++)
@@ -118,7 +122,7 @@ int main()
                     }
                 }
             }
-
+            // sort by name
             else if (choice == 7)
             {
                 for (int i = 0; i < count - 1; i++)
@@ -146,6 +150,7 @@ int main()
                 cout << "Sorted by name!\n";
             }
 
+            // sort by statuss
             else if (choice == 8)
             {
                 for (int i = 0; i < count - 1; i++)
@@ -247,7 +252,8 @@ int main()
                 }
             }
 
-            // SEARCH
+            // search
+
             else if (choice == 3)
             {
                 string name;
@@ -338,7 +344,7 @@ int main()
                 cout << "Sorted!\n";
             }
 
-            // MARK DONE
+            // Mark done
             else if (choice == 7)
             {
                 int index;
