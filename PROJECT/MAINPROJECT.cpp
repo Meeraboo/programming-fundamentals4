@@ -5,7 +5,7 @@ int main()
 {
     int totalcars = 100;
     int currentcar = 0;
-    // arrays required for admin code
+    // arrays required
     string carNamesArr[totalcars];
     string carModelArr[totalcars];
     string carColourArr[totalcars];
@@ -17,6 +17,8 @@ int main()
     int carPriceArr[totalcars];
     int stockArr[totalcars];
     string carStatusArr[totalcars];
+    string buyernameArr[totalcars];
+    string customerName[totalcars];
 
     while (true)
     {
@@ -57,850 +59,875 @@ int main()
         cout << "\n";
         if (role == 1)
         {
-            // admin code
-            system("cls");
-
-            cout << "||===============  ADMIN MENU  ======================" << endl;
-            int option;
-            cout << "1.Add Car" << endl;
-            cout << "2.View All Cars" << endl;
-            cout << "3.Search Car" << endl;
-            cout << "4.Update Car status" << endl;
-            cout << "5.Delete Car" << endl;
-            cout << "6.Sort Cars By Price" << endl;
-            cout << "7.Sort Cars By Name" << endl;
-            cout << "8.View low stock cars" << endl;
-            cout << "9.View sales history" << endl;
-            cout << "10.Total revenue" << endl;
-            cout << "11.Logout" << endl;
-            cout << "\n";
-            cout << "Enter the number of option u want to chose" << endl;
-            cin >> option;
-            string name;
-            if (option == 1)
+            while (true)
             {
-                cout << "--Add Car--!" << endl;
-                cout << "Enter the NAME of car: " << endl;
-                cin.ignore();
-                getline(cin, name);
+                // admin code
+                system("cls");
 
-                cout << "Enter car model: " << endl;
-                string model;
-                getline(cin, model);
-                cout << "Enter colour of the car: " << endl;
-                string color;
-                cin >> color;
-                cout << "Enter Condition of the car: " << endl;
-                string condition;
-                cin.ignore();
-                getline(cin, condition);
-                cout << "Enter the type ( imported/exported) of the car: " << endl;
-                string type;
-                cin >> type;
-                cout << "enter how many meters has car travelled: ";
-                int miles;
-                cin >> miles;
-                cout << "Enter car paint condition(original/one paint/2nd paint etc): ";
-                string paintcond;
-                cin >> paintcond;
-                cout << "Enter the time of registry of the car: ";
-                string registrytime;
-                cin.ignore();
-                getline(cin, registrytime);
-                cout << "Enter the price of car: ";
-                int price;
-                cin >> price;
-                cout << " Enter the stock of car: ";
-                int stock;
-                cin >> stock;
-                cout << "Enter car status" << endl;
-                string status;
-                cin.ignore();
-                getline(cin, status);
-                // storing in arrays
-                carNamesArr[currentcar] = name;
-                carModelArr[currentcar] = model;
-                carColourArr[currentcar] = color;
-                carConditionArr[currentcar] = condition;
-                carTypeArr[currentcar] = type;
-                carMillingArr[currentcar] = miles;
-                carPaintcondArr[currentcar] = paintcond;
-                carRegistryyrArr[currentcar] = registrytime;
-                carPriceArr[currentcar] = price;
-                stockArr[currentcar] = stock;
-                carStatusArr[currentcar] = status;
-                currentcar = currentcar + 1;
-                getch();
-            }
-            if (option == 2)
-            {
-                cout << "== View Cars ==\n";
-                if (currentcar == 0)
+                cout << "||===============  ADMIN MENU  ======================" << endl;
+                int option;
+                cout << "1.Add Car" << endl;
+                cout << "2.View All Cars" << endl;
+                cout << "3.Search Car" << endl;
+                cout << "4.Update Car status" << endl;
+                cout << "5.Delete Car" << endl;
+                cout << "6.Sort Cars By Price" << endl;
+                cout << "7.Sort Cars By Name" << endl;
+                cout << "8.View low stock cars" << endl;
+                cout << "9.View sales history" << endl;
+                cout << "10.Total revenue" << endl;
+                cout << "11.Logout" << endl;
+                cout << "\n";
+                cout << "Enter the number of option u want to chose" << endl;
+                cin >> option;
+                string name;
+                if (option == 1)
                 {
-                    cout << "No cars available!" << endl;
+                    cout << "--Add Car--!" << endl;
+                    cout << "Enter the NAME of car: " << endl;
+                    string name;
+                    cin.ignore();
+                    getline(cin, name);
+
+                    cout << "Enter car model: " << endl;
+                    string model;
+                    getline(cin, model);
+                    cout << "Enter colour of the car: " << endl;
+                    string color;
+                    cin >> color;
+                    cout << "Enter Condition of the car: " << endl;
+                    string condition;
+                    cin.ignore();
+                    getline(cin, condition);
+                    cout << "Enter the type ( imported/exported) of the car: " << endl;
+                    string type;
+                    cin >> type;
+                    cout << "enter how many meters has car travelled: ";
+                    int miles;
+                    cin >> miles;
+                    cout << "Enter car paint condition(original/one paint/2nd paint etc): ";
+                    string paintcond;
+                    cin >> paintcond;
+                    cout << "Enter the time of registry of the car: ";
+                    string registrytime;
+                    cin.ignore();
+                    getline(cin, registrytime);
+                    cout << "Enter the price of car: ";
+                    int price;
+                    cin >> price;
+                    cout << " Enter the stock of car: ";
+                    int stock;
+                    cin >> stock;
+                    cout << "Enter car status" << endl;
+                    string status;
+                    cin.ignore();
+                    getline(cin, status);
+                    // storing in arrays
+                    carNamesArr[currentcar] = name;
+                    carModelArr[currentcar] = model;
+                    carColourArr[currentcar] = color;
+                    carConditionArr[currentcar] = condition;
+                    carTypeArr[currentcar] = type;
+                    carMillingArr[currentcar] = miles;
+                    carPaintcondArr[currentcar] = paintcond;
+                    carRegistryyrArr[currentcar] = registrytime;
+                    carPriceArr[currentcar] = price;
+                    stockArr[currentcar] = stock;
+                    carStatusArr[currentcar] = status;
+                    currentcar = currentcar + 1;
+                    getch();
                 }
-                else
+                if (option == 2)
                 {
+                    cout << "== View Cars ==\n";
+                    if (currentcar == 0)
+                    {
+                        cout << "No cars available!" << endl;
+                    }
+                    else
+                    {
+                        for (int i = 0; i < currentcar; i++)
+                        {
+
+                            cout << "Car #" << i + 1 << endl;
+                            cout << "Name: " << carNamesArr[i] << endl;
+                            cout << "Model: " << carModelArr[i] << endl;
+                            cout << "Color: " << carColourArr[i] << endl;
+                            cout << "Condition: " << carConditionArr[i] << endl;
+                            cout << "Type: " << carTypeArr[i] << endl;
+                            cout << "Mileage: " << carMillingArr[i] << endl;
+                            cout << "Paint: " << carPaintcondArr[i] << endl;
+                            cout << "Registry: " << carRegistryyrArr[i] << endl;
+                            cout << "Price: " << carPriceArr[i] << endl;
+                            cout << "Stock: " << stockArr[i] << endl;
+                            cout << "Status: " << carStatusArr[i] << endl;
+
+                            cout << "----------------------" << endl;
+                        }
+                    }
+                    getch();
+                }
+                if (option == 3)
+                {
+                    // search car
+
+                    string searchName;
+                    bool found = false;
+
+                    cout << "Enter the name of the car u want to search: ";
+                    cin.ignore();
+                    getline(cin, searchName);
+
                     for (int i = 0; i < currentcar; i++)
                     {
+                        if (searchName == carNamesArr[i])
+                        {
+                            found = true;
 
-                        cout << "Car #" << i + 1 << endl;
-                        cout << "Name: " << carNamesArr[i] << endl;
-                        cout << "Model: " << carModelArr[i] << endl;
-                        cout << "Color: " << carColourArr[i] << endl;
-                        cout << "Condition: " << carConditionArr[i] << endl;
-                        cout << "Type: " << carTypeArr[i] << endl;
-                        cout << "Mileage: " << carMillingArr[i] << endl;
-                        cout << "Paint: " << carPaintcondArr[i] << endl;
-                        cout << "Registry: " << carRegistryyrArr[i] << endl;
-                        cout << "Price: " << carPriceArr[i] << endl;
-                        cout << "Stock: " << stockArr[i] << endl;
-                        cout << "Status: " << carStatusArr[i] << endl;
-
-                        cout << "----------------------" << endl;
+                            cout << "Name: " << carNamesArr[i] << endl;
+                            cout << "Model: " << carModelArr[i] << endl;
+                            cout << "Color: " << carColourArr[i] << endl;
+                            cout << "Condition: " << carConditionArr[i] << endl;
+                            cout << "Type: " << carTypeArr[i] << endl;
+                            cout << "Mileage: " << carMillingArr[i] << endl;
+                            cout << "Paint: " << carPaintcondArr[i] << endl;
+                            cout << "Registry: " << carRegistryyrArr[i] << endl;
+                            cout << "Price: " << carPriceArr[i] << endl;
+                            cout << "Stock: " << stockArr[i] << endl;
+                            cout << "Status: " << carStatusArr[i] << endl;
+                        }
                     }
-                }
-                getch();
-            }
-            if (option == 3)
-            {
-                // search car
-
-                string searchName;
-                bool found = false;
-
-                cout << "Enter the name of the car u want to search: ";
-                cin.ignore();
-                getline(cin, searchName);
-
-                for (int i = 0; i < currentcar; i++)
-                {
-                    if (searchName == carNamesArr[i])
+                    if (found == false)
                     {
-                        found = true;
-
-                        cout << "Name: " << carNamesArr[i] << endl;
-                        cout << "Model: " << carModelArr[i] << endl;
-                        cout << "Color: " << carColourArr[i] << endl;
-                        cout << "Condition: " << carConditionArr[i] << endl;
-                        cout << "Type: " << carTypeArr[i] << endl;
-                        cout << "Mileage: " << carMillingArr[i] << endl;
-                        cout << "Paint: " << carPaintcondArr[i] << endl;
-                        cout << "Registry: " << carRegistryyrArr[i] << endl;
-                        cout << "Price: " << carPriceArr[i] << endl;
-                        cout << "Stock: " << stockArr[i] << endl;
-                        cout << "Status: " << carStatusArr[i] << endl;
+                        cout << "No car found!" << endl;
                     }
+                    getch();
                 }
-                if (found == false)
+                if (option == 4)
                 {
-                    cout << "No car found!" << endl;
-                }
-                getch();
-            }
-            if (option == 4)
-            {
-                // field update system
-                //  update car
-                string searchtoname;
-                cout << "enter car name to update: " << endl;
-                cin.ignore();
-                getline(cin, searchtoname);
-                for (int i = 0; i < currentcar; i++)
-                {
-                    if (carNamesArr[i] == searchtoname)
+                    // field update system
+                    //  update car
+                    string searchtoname;
+                    cout << "enter car name to update: " << endl;
+                    cin.ignore();
+                    getline(cin, searchtoname);
+                    for (int i = 0; i < currentcar; i++)
                     {
-                        cout << "What do you want to update?\n";
-                        int updateoption;
-                        cout << "1.Name of car" << endl;
-                        cout << "2.color of car" << endl;
-                        cout << "3.Model of car" << endl;
-                        cout << "4.Condition" << endl;
-                        cout << "5.Type" << endl;
-                        cout << "6.miles covered" << endl;
-                        cout << "7.Paintcond" << endl;
-                        cout << "8.RegistryTime" << endl;
-                        cout << "9.Price" << endl;
-                        cout << "10.stock" << endl;
-                        cout << "Enter the number u want to update" << endl;
-                        cin >> updateoption;
-                        if (updateoption == 1)
+                        if (carNamesArr[i] == searchtoname)
                         {
-                            cout << "enter new name" << endl;
-                            cin.ignore();
-                            getline(cin, carNamesArr[i]);
-                        }
-                        else if (updateoption == 2)
-                        {
-                            cout << "enter color of car" << endl;
-                            cin.ignore();
-                            getline(cin, carColourArr[i]);
-                        }
-                        else if (updateoption == 3)
-                        {
-                            cout << "Enter updated model of car" << endl;
-                            cin.ignore();
-                            getline(cin, carModelArr[i]);
-                        }
-                        else if (updateoption == 4)
-                        {
-                            cout << "Updated condition of the car" << endl;
-                            cin.ignore();
-                            getline(cin, carConditionArr[i]);
-                        }
-                        else if (updateoption == 5)
-                        {
-                            cout << "Updated Type of car" << endl;
-                            cin.ignore();
-                            getline(cin, carTypeArr[i]);
-                        }
-                        else if (updateoption == 6)
-                        {
-                            cout << "Updated miles covered" << endl;
-                            cin >> carMillingArr[i];
-                        }
-                        else if (updateoption == 7)
-                        {
-                            cout << "Updated paint condition" << endl;
-                            cin.ignore();
-                            getline(cin, carPaintcondArr[i]);
-                        }
-                        else if (updateoption == 8)
-                        {
-                            cout << "Updated registry time" << endl;
-                            cin.ignore();
-                            getline(cin, carRegistryyrArr[i]);
-                        }
-                        else if (updateoption == 9)
-                        {
-                            cout << "Updated price of car" << endl;
-                            cin >> carPriceArr[i];
-                        }
-                        else if (updateoption == 10)
-                        {
-                            cout << "Updated stock of car" << endl;
-                            cin >> stockArr[i];
-                        }
-                        else
-                        {
-                            cout << "invalid update option!" << endl;
+                            cout << "What do you want to update?\n";
+                            int updateoption;
+                            cout << "1.Name of car" << endl;
+                            cout << "2.color of car" << endl;
+                            cout << "3.Model of car" << endl;
+                            cout << "4.Condition" << endl;
+                            cout << "5.Type" << endl;
+                            cout << "6.miles covered" << endl;
+                            cout << "7.Paintcond" << endl;
+                            cout << "8.RegistryTime" << endl;
+                            cout << "9.Price" << endl;
+                            cout << "10.stock" << endl;
+                            cout << "Enter the number u want to update" << endl;
+                            cin >> updateoption;
+                            if (updateoption == 1)
+                            {
+                                cout << "enter new name" << endl;
+                                cin.ignore();
+                                getline(cin, carNamesArr[i]);
+                            }
+                            else if (updateoption == 2)
+                            {
+                                cout << "enter color of car" << endl;
+                                cin.ignore();
+                                getline(cin, carColourArr[i]);
+                            }
+                            else if (updateoption == 3)
+                            {
+                                cout << "Enter updated model of car" << endl;
+                                cin.ignore();
+                                getline(cin, carModelArr[i]);
+                            }
+                            else if (updateoption == 4)
+                            {
+                                cout << "Updated condition of the car" << endl;
+                                cin.ignore();
+                                getline(cin, carConditionArr[i]);
+                            }
+                            else if (updateoption == 5)
+                            {
+                                cout << "Updated Type of car" << endl;
+                                cin.ignore();
+                                getline(cin, carTypeArr[i]);
+                            }
+                            else if (updateoption == 6)
+                            {
+                                cout << "Updated miles covered" << endl;
+                                cin >> carMillingArr[i];
+                            }
+                            else if (updateoption == 7)
+                            {
+                                cout << "Updated paint condition" << endl;
+                                cin.ignore();
+                                getline(cin, carPaintcondArr[i]);
+                            }
+                            else if (updateoption == 8)
+                            {
+                                cout << "Updated registry time" << endl;
+                                cin.ignore();
+                                getline(cin, carRegistryyrArr[i]);
+                            }
+                            else if (updateoption == 9)
+                            {
+                                cout << "Updated price of car" << endl;
+                                cin >> carPriceArr[i];
+                            }
+                            else if (updateoption == 10)
+                            {
+                                cout << "Updated stock of car" << endl;
+                                cin >> stockArr[i];
+                            }
+                            else
+                            {
+                                cout << "invalid update option!" << endl;
+                            }
                         }
                     }
+                    getch();
                 }
-                getch();
-            }
-            if (option == 5)
-            {
-                // delete car
-                string deletecar;
-                cout << "Enter the name of the car u want to delete: " << endl;
-                cin.ignore();
-                getline(cin, deletecar);
-                for (int i = 0; i < currentcar; i++)
+                if (option == 5)
                 {
-                    if (carNamesArr[i] == deletecar)
+                    // delete car
+                    string deletecar;
+                    cout << "Enter the name of the car u want to delete: " << endl;
+                    cin.ignore();
+                    getline(cin, deletecar);
+                    for (int i = 0; i < currentcar; i++)
                     {
-                        for (int j = i; j < currentcar - 1; j++)
+                        if (carNamesArr[i] == deletecar)
                         {
-                            carNamesArr[j] = carNamesArr[j + 1];
-                            carModelArr[j] = carModelArr[j + 1];
-                            carColourArr[j] = carColourArr[j + 1];
-                            carConditionArr[j] = carConditionArr[j + 1];
-                            carTypeArr[j] = carTypeArr[j + 1];
-                            carMillingArr[j] = carMillingArr[j + 1];
-                            carPaintcondArr[j] = carPaintcondArr[j + 1];
-                            carRegistryyrArr[j] = carRegistryyrArr[j + 1];
-                            carPriceArr[j] = carPriceArr[j + 1];
-                            stockArr[j] = stockArr[j + 1];
-                            carStatusArr[j] = carStatusArr[j + 1];
-                        }
-                        currentcar--; // to decrease the total number of cars after deletion
-                        cout << "Car deleted successfully!" << endl;
+                            for (int j = i; j < currentcar - 1; j++)
+                            {
+                                carNamesArr[j] = carNamesArr[j + 1];
+                                carModelArr[j] = carModelArr[j + 1];
+                                carColourArr[j] = carColourArr[j + 1];
+                                carConditionArr[j] = carConditionArr[j + 1];
+                                carTypeArr[j] = carTypeArr[j + 1];
+                                carMillingArr[j] = carMillingArr[j + 1];
+                                carPaintcondArr[j] = carPaintcondArr[j + 1];
+                                carRegistryyrArr[j] = carRegistryyrArr[j + 1];
+                                carPriceArr[j] = carPriceArr[j + 1];
+                                stockArr[j] = stockArr[j + 1];
+                                carStatusArr[j] = carStatusArr[j + 1];
+                            }
+                            currentcar--; // to decrease the total number of cars after deletion
+                            cout << "Car deleted successfully!" << endl;
 
-                        break;
-                    }
-                }
-                getch();
-            }
-            if (option == 6)
-            {
-                // sort car by price low to high
-                for (int i = 0; i < currentcar - 1; i++)
-                {
-                    for (int j = 0; j < currentcar - i - 1; j++)
-                    {
-                        if (carPriceArr[j] > carPriceArr[j + 1])
-                        {
-                            string tempName = carNamesArr[j];
-                            carNamesArr[j] = carNamesArr[j + 1];
-                            carNamesArr[j + 1] = tempName;
-
-                            // swapping model
-                            string tempModel = carModelArr[j];
-                            carModelArr[j] = carModelArr[j + 1];
-                            carModelArr[j + 1] = tempModel;
-                            // swapping colour
-
-                            string tempColour = carColourArr[j];
-                            carColourArr[j] = carColourArr[j + 1];
-                            carColourArr[j + 1] = tempColour;
-                            // swapping condition
-
-                            string tempCondition = carConditionArr[j];
-                            carConditionArr[j] = carConditionArr[j + 1];
-                            carConditionArr[j + 1] = tempCondition;
-                            // swapping type
-
-                            string tempType = carTypeArr[j];
-                            carTypeArr[j] = carTypeArr[j + 1];
-                            carTypeArr[j + 1] = tempType;
-                            // swapping miles
-
-                            int tempMilling = carMillingArr[j];
-                            carMillingArr[j] = carMillingArr[j + 1];
-                            carMillingArr[j + 1] = tempMilling;
-                            // swapping paint condition
-
-                            string tempPaintcond = carPaintcondArr[j];
-                            carPaintcondArr[j] = carPaintcondArr[j + 1];
-                            carPaintcondArr[j + 1] = tempPaintcond;
-                            // swapping registry time
-
-                            string tempRegistryyr = carRegistryyrArr[j];
-                            carRegistryyrArr[j] = carRegistryyrArr[j + 1];
-                            carRegistryyrArr[j + 1] = tempRegistryyr;
-                            // swapping price
-
-                            double tempPrice = carPriceArr[j];
-                            carPriceArr[j] = carPriceArr[j + 1];
-                            carPriceArr[j + 1] = tempPrice;
-                            // swapping stock
-
-                            int tempStock = stockArr[j];
-                            stockArr[j] = stockArr[j + 1];
-                            stockArr[j + 1] = tempStock;
-                            // swapping status
-
-                            string tempStatus = carStatusArr[j];
-                            carStatusArr[j] = carStatusArr[j + 1];
-                            carStatusArr[j + 1] = tempStatus;
+                            break;
                         }
                     }
+                    getch();
                 }
-                getch();
-            }
-            if (option == 7)
-            {
-                // sort car by name
-                for (int i = 0; i < currentcar; i++)
+                if (option == 6)
                 {
-                    for (int j = 0; j < currentcar - i - 1; j++) // because last element already sorted after one loop
+                    // sort car by price low to high
+                    for (int i = 0; i < currentcar - 1; i++)
                     {
-                        if (carNamesArr[j] > carNamesArr[j + 1])
+                        for (int j = 0; j < currentcar - i - 1; j++)
                         {
-                            string tempName = carNamesArr[j];
-                            carNamesArr[j] = carNamesArr[j + 1];
-                            carNamesArr[j + 1] = tempName;
+                            if (carPriceArr[j] > carPriceArr[j + 1])
+                            {
+                                string tempName = carNamesArr[j];
+                                carNamesArr[j] = carNamesArr[j + 1];
+                                carNamesArr[j + 1] = tempName;
 
-                            // swapping model
-                            string tempModel = carModelArr[j];
-                            carModelArr[j] = carModelArr[j + 1];
-                            carModelArr[j + 1] = tempModel;
-                            // swapping colour
+                                // swapping model
+                                string tempModel = carModelArr[j];
+                                carModelArr[j] = carModelArr[j + 1];
+                                carModelArr[j + 1] = tempModel;
+                                // swapping colour
 
-                            string tempColour = carColourArr[j];
-                            carColourArr[j] = carColourArr[j + 1];
-                            carColourArr[j + 1] = tempColour;
-                            // swapping condition
+                                string tempColour = carColourArr[j];
+                                carColourArr[j] = carColourArr[j + 1];
+                                carColourArr[j + 1] = tempColour;
+                                // swapping condition
 
-                            string tempCondition = carConditionArr[j];
-                            carConditionArr[j] = carConditionArr[j + 1];
-                            carConditionArr[j + 1] = tempCondition;
-                            // swapping type
+                                string tempCondition = carConditionArr[j];
+                                carConditionArr[j] = carConditionArr[j + 1];
+                                carConditionArr[j + 1] = tempCondition;
+                                // swapping type
 
-                            string tempType = carTypeArr[j];
-                            carTypeArr[j] = carTypeArr[j + 1];
-                            carTypeArr[j + 1] = tempType;
-                            // swapping miles
+                                string tempType = carTypeArr[j];
+                                carTypeArr[j] = carTypeArr[j + 1];
+                                carTypeArr[j + 1] = tempType;
+                                // swapping miles
 
-                            int tempMilling = carMillingArr[j];
-                            carMillingArr[j] = carMillingArr[j + 1];
-                            carMillingArr[j + 1] = tempMilling;
-                            // swapping paint condition
+                                int tempMilling = carMillingArr[j];
+                                carMillingArr[j] = carMillingArr[j + 1];
+                                carMillingArr[j + 1] = tempMilling;
+                                // swapping paint condition
 
-                            string tempPaintcond = carPaintcondArr[j];
-                            carPaintcondArr[j] = carPaintcondArr[j + 1];
-                            carPaintcondArr[j + 1] = tempPaintcond;
-                            // swapping registry time
+                                string tempPaintcond = carPaintcondArr[j];
+                                carPaintcondArr[j] = carPaintcondArr[j + 1];
+                                carPaintcondArr[j + 1] = tempPaintcond;
+                                // swapping registry time
 
-                            string tempRegistryyr = carRegistryyrArr[j];
-                            carRegistryyrArr[j] = carRegistryyrArr[j + 1];
-                            carRegistryyrArr[j + 1] = tempRegistryyr;
-                            // swapping price
+                                string tempRegistryyr = carRegistryyrArr[j];
+                                carRegistryyrArr[j] = carRegistryyrArr[j + 1];
+                                carRegistryyrArr[j + 1] = tempRegistryyr;
+                                // swapping price
 
-                            double tempPrice = carPriceArr[j];
-                            carPriceArr[j] = carPriceArr[j + 1];
-                            carPriceArr[j + 1] = tempPrice;
-                            // swapping stock
+                                double tempPrice = carPriceArr[j];
+                                carPriceArr[j] = carPriceArr[j + 1];
+                                carPriceArr[j + 1] = tempPrice;
+                                // swapping stock
 
-                            int tempStock = stockArr[j];
-                            stockArr[j] = stockArr[j + 1];
-                            stockArr[j + 1] = tempStock;
-                            // swapping status
+                                int tempStock = stockArr[j];
+                                stockArr[j] = stockArr[j + 1];
+                                stockArr[j + 1] = tempStock;
+                                // swapping status
 
-                            string tempStatus = carStatusArr[j];
-                            carStatusArr[j] = carStatusArr[j + 1];
-                            carStatusArr[j + 1] = tempStatus;
+                                string tempStatus = carStatusArr[j];
+                                carStatusArr[j] = carStatusArr[j + 1];
+                                carStatusArr[j + 1] = tempStatus;
+                            }
+                            cout << "cars sorted by price successfully!" << endl;
                         }
                     }
+                    getch();
                 }
-                getch();
-            }
-            if (option == 8)
-            {
-                // low stock cars
-
-                cout << "== Low Stock Cars ==\n";
-                for (int i = 0; i < currentcar; i++)
+                if (option == 7)
                 {
-                    if (stockArr[i] < 5)
+                    // sort car by name
+                    for (int i = 0; i < currentcar; i++)
                     {
-                        cout << "Name: " << carNamesArr[i] << endl;
-                        cout << "Model: " << carModelArr[i] << endl;
-                        cout << "Color: " << carColourArr[i] << endl;
-                        cout << "Condition: " << carConditionArr[i] << endl;
-                        cout << "Type: " << carTypeArr[i] << endl;
-                        cout << "Mileage: " << carMillingArr[i] << endl;
-                        cout << "Paint: " << carPaintcondArr[i] << endl;
-                        cout << "Registry: " << carRegistryyrArr[i] << endl;
-                        cout << "Price: " << carPriceArr[i] << endl;
-                        cout << "Stock: " << stockArr[i] << endl;
-                        cout << "Status: " << carStatusArr[i] << endl;
+                        for (int j = 0; j < currentcar - i - 1; j++) // because last element already sorted after one loop
+                        {
+                            if (carNamesArr[j] > carNamesArr[j + 1])
+                            {
+                                string tempName = carNamesArr[j];
+                                carNamesArr[j] = carNamesArr[j + 1];
+                                carNamesArr[j + 1] = tempName;
 
-                        cout << "----------------------" << endl;
+                                // swapping model
+                                string tempModel = carModelArr[j];
+                                carModelArr[j] = carModelArr[j + 1];
+                                carModelArr[j + 1] = tempModel;
+                                // swapping colour
+
+                                string tempColour = carColourArr[j];
+                                carColourArr[j] = carColourArr[j + 1];
+                                carColourArr[j + 1] = tempColour;
+                                // swapping condition
+
+                                string tempCondition = carConditionArr[j];
+                                carConditionArr[j] = carConditionArr[j + 1];
+                                carConditionArr[j + 1] = tempCondition;
+                                // swapping type
+
+                                string tempType = carTypeArr[j];
+                                carTypeArr[j] = carTypeArr[j + 1];
+                                carTypeArr[j + 1] = tempType;
+                                // swapping miles
+
+                                int tempMilling = carMillingArr[j];
+                                carMillingArr[j] = carMillingArr[j + 1];
+                                carMillingArr[j + 1] = tempMilling;
+                                // swapping paint condition
+
+                                string tempPaintcond = carPaintcondArr[j];
+                                carPaintcondArr[j] = carPaintcondArr[j + 1];
+                                carPaintcondArr[j + 1] = tempPaintcond;
+                                // swapping registry time
+
+                                string tempRegistryyr = carRegistryyrArr[j];
+                                carRegistryyrArr[j] = carRegistryyrArr[j + 1];
+                                carRegistryyrArr[j + 1] = tempRegistryyr;
+                                // swapping price
+
+                                double tempPrice = carPriceArr[j];
+                                carPriceArr[j] = carPriceArr[j + 1];
+                                carPriceArr[j + 1] = tempPrice;
+                                // swapping stock
+
+                                int tempStock = stockArr[j];
+                                stockArr[j] = stockArr[j + 1];
+                                stockArr[j + 1] = tempStock;
+                                // swapping status
+
+                                string tempStatus = carStatusArr[j];
+                                carStatusArr[j] = carStatusArr[j + 1];
+                                carStatusArr[j + 1] = tempStatus;
+                            }
+                            cout << "cars sorted by name successfully!" << endl;
+                        }
                     }
+                    getch();
                 }
-
-                getch();
-            }
-            if (option == 9)
-            {
-                // view sales history
-
-                cout << "== Sales History ==\n";
-                for (int i = 0; i < currentcar; i++)
+                if (option == 8)
                 {
-                    if (carStatusArr[i] == "sold")
+                    // low stock cars
+
+                    cout << "== Low Stock Cars ==\n";
+                    for (int i = 0; i < currentcar; i++)
                     {
-                        cout << "Name: " << carNamesArr[i] << endl;
-                        cout << "Model: " << carModelArr[i] << endl;
-                        cout << "Color: " << carColourArr[i] << endl;
-                        cout << "Condition: " << carConditionArr[i] << endl;
-                        cout << "Type: " << carTypeArr[i] << endl;
-                        cout << "Mileage: " << carMillingArr[i] << endl;
-                        cout << "Paint: " << carPaintcondArr[i] << endl;
-                        cout << "Registry: " << carRegistryyrArr[i] << endl;
-                        cout << "Price: " << carPriceArr[i] << endl;
-                        cout << "Stock: " << stockArr[i] << endl;
-                        cout << "Status: " << carStatusArr[i] << endl;
+                        if (stockArr[i] < 5)
+                        {
+                            cout << "Name: " << carNamesArr[i] << endl;
+                            cout << "Model: " << carModelArr[i] << endl;
+                            cout << "Color: " << carColourArr[i] << endl;
+                            cout << "Condition: " << carConditionArr[i] << endl;
+                            cout << "Type: " << carTypeArr[i] << endl;
+                            cout << "Mileage: " << carMillingArr[i] << endl;
+                            cout << "Paint: " << carPaintcondArr[i] << endl;
+                            cout << "Registry: " << carRegistryyrArr[i] << endl;
+                            cout << "Price: " << carPriceArr[i] << endl;
+                            cout << "Stock: " << stockArr[i] << endl;
+                            cout << "Status: " << carStatusArr[i] << endl;
 
-                        cout << "----------------------" << endl;
+                            cout << "----------------------" << endl;
+                        }
                     }
+
+                    getch();
                 }
-
-                getch();
-            }
-            if (option == 10)
-            {
-                // total revenue
-
-                cout << "== Total Revenue ==\n";
-                int totalRevenue = 0;
-                for (int i = 0; i < currentcar; i++)
+                if (option == 9)
                 {
-                    if (carStatusArr[i] == "sold")
+                    // view sales history
+
+                    cout << "== Sales History ==\n";
+                    for (int i = 0; i < currentcar; i++)
                     {
-                        totalRevenue += carPriceArr[i];
+                        if (carStatusArr[i] == "sold")
+                        {
+                            cout << "Name: " << carNamesArr[i] << endl;
+                            cout << "Model: " << carModelArr[i] << endl;
+                            cout << "Color: " << carColourArr[i] << endl;
+                            cout << "Condition: " << carConditionArr[i] << endl;
+                            cout << "Type: " << carTypeArr[i] << endl;
+                            cout << "Mileage: " << carMillingArr[i] << endl;
+                            cout << "Paint: " << carPaintcondArr[i] << endl;
+                            cout << "Registry: " << carRegistryyrArr[i] << endl;
+                            cout << "Price: " << carPriceArr[i] << endl;
+                            cout << "Stock: " << stockArr[i] << endl;
+                            cout << "Status: " << carStatusArr[i] << endl;
+
+                            cout << "----------------------" << endl;
+                        }
                     }
+
+                    getch();
                 }
-                cout << "Total Revenue: " << totalRevenue << endl;
+                if (option == 10)
+                {
+                    // total revenue
+
+                    cout << "== Total Revenue ==\n";
+                    int totalRevenue = 0;
+                    for (int i = 0; i < currentcar; i++)
+                    {
+                        if (carStatusArr[i] == "sold")
+                        {
+                            totalRevenue += carPriceArr[i];
+                        }
+                    }
+                    cout << "Total Revenue: " << totalRevenue << endl;
+
+                    getch();
+                }
+                if (option == 11)
+                {
+                    // back
+                    continue;
+                }
+
+                cout << "your data has been saved" << endl;
 
                 getch();
             }
-            if (option == 11)
-            {
-                // back
-                continue;
-            }
-
-            cout << "your data has been saved" << endl;
-
-            getch();
         }
 
         else if (role == 2)
+
         {
-            // cutomer code
-            cout << "||===============  CUSTOMER MENU  ================||" << endl;
-            cout << "1.View Cars" << endl;
-            cout << "2.Search Car" << endl;
-            cout << "3.Sort Cars By Price" << endl;
-            cout << "4.Sort Cars By Name" << endl;
-            cout << "5.Buy Car" << endl;
-            cout << "6.View My Purchases" << endl;
-
-            cout << "7.Filter By Company" << endl;
-            cout << "8.Check Car Availability" << endl;
-            cout << "9.Generate Bill" << endl;
-            cout << "10.Logout" << endl;
-
-            int useroption;
-            cout << "chose option: " << endl;
-            cin >> useroption;
-
-            if (useroption == 1)
+            while (true)
             {
-                system("cls");
-                cout << "====  View cars  ===" << endl;
+                // cutomer code
+                string customerName;
+                cout << "Enter your name: ";
+                cin.ignore();
+                getline(cin, customerName);
+                cout << "||===============  CUSTOMER MENU  ================||" << endl;
+                cout << "1.View Cars" << endl;
+                cout << "2.Search Car" << endl;
+                cout << "3.Sort Cars By Price" << endl;
+                cout << "4.Sort Cars By Name" << endl;
+                cout << "5.Buy Car" << endl;
+                cout << "6.View My Purchases" << endl;
 
-                if (currentcar == 0)
+                cout << "7.Filter By Company" << endl;
+                cout << "8.Check Car Availability" << endl;
+                cout << "9.Generate Bill" << endl;
+                cout << "10.Logout" << endl;
+
+                int useroption;
+                cout << "chose option: " << endl;
+                cin >> useroption;
+
+                if (useroption == 1)
                 {
-                    cout << "No cars available!" << endl;
+                    system("cls");
+                    cout << "====  View cars  ===" << endl;
+
+                    if (currentcar == 0)
+                    {
+                        cout << "No cars available!" << endl;
+                    }
+                    else
+                    {
+                        // Header row
+                        cout << "No.\tName\t\tModel\t\tColor\t\tCondition\tType\t\tPrice\t\tStock\t\tStatus" << endl;
+
+                        for (int i = 0; i < currentcar; i++)
+                        {
+                            cout << i + 1 << "\t"
+                                 << carNamesArr[i] << "\t\t"
+                                 << carModelArr[i] << "\t\t"
+                                 << carColourArr[i] << "\t\t"
+                                 << carConditionArr[i] << "\t\t"
+                                 << carTypeArr[i] << "\t\t"
+                                 << carPriceArr[i] << "\t\t"
+                                 << stockArr[i] << "\t\t"
+                                 << carStatusArr[i] << endl;
+                        }
+                    }
+                    getch();
                 }
-                else
+                else if (useroption == 2)
                 {
-                    // Header row
-                    cout << "No.\tName\t\tModel\t\tColor\t\tCondition\tType\t\tPrice\t\tStock\t\tStatus" << endl;
-
+                    // search car
+                    system("cls");
+                    cout << "==== Search Car ===" << endl;
+                    string searchName;
+                    cout << "Enter the name of the car u want to search: ";
+                    cin.ignore();
+                    getline(cin, searchName);
+                    bool found = false;
                     for (int i = 0; i < currentcar; i++)
                     {
-                        cout << i + 1 << "\t"
-                             << carNamesArr[i] << "\t\t"
-                             << carModelArr[i] << "\t\t"
-                             << carColourArr[i] << "\t\t"
-                             << carConditionArr[i] << "\t\t"
-                             << carTypeArr[i] << "\t\t"
-                             << carPriceArr[i] << "\t\t"
-                             << stockArr[i] << "\t\t"
-                             << carStatusArr[i] << endl;
-                    }
-                }
-                getch();
-            }
-            else if (useroption == 2)
-            {
-                // search car
-                system("cls");
-                cout << "==== Search Car ===" << endl;
-                string searchName;
-                cout << "Enter the name of the car u want to search: ";
-                cin.ignore();
-                getline(cin, searchName);
-                bool found = false;
-                for (int i = 0; i < currentcar; i++)
-                {
-                    if (searchName == carNamesArr[i])
-                    {
-                        found = true;
-
-                        cout << "Name: " << carNamesArr[i] << endl;
-                        cout << "Model: " << carModelArr[i] << endl;
-                        cout << "Color: " << carColourArr[i] << endl;
-                        cout << "Condition: " << carConditionArr[i] << endl;
-                        cout << "Type: " << carTypeArr[i] << endl;
-                        cout << "Mileage: " << carMillingArr[i] << endl;
-                        cout << "Paint: " << carPaintcondArr[i] << endl;
-                        cout << "Registry: " << carRegistryyrArr[i] << endl;
-                        cout << "Price: " << carPriceArr[i] << endl;
-                        cout << "Stock: " << stockArr[i] << endl;
-                        cout << "Status: " << carStatusArr[i] << endl;
-                    }
-                }
-                if (!found)
-                {
-                    cout << "Car not found!" << endl;
-                }
-            }
-            else if (useroption == 3)
-            {
-                // sort by price
-                for (int i = 0; i < currentcar - 1; i++)
-                {
-                    for (int j = 0; j < currentcar - i - 1; j++)
-                    {
-                        if (carPriceArr[j] > carPriceArr[j + 1])
+                        if (searchName == carNamesArr[i])
                         {
-                            string tempName = carNamesArr[j];
-                            carNamesArr[j] = carNamesArr[j + 1];
-                            carNamesArr[j + 1] = tempName;
+                            found = true;
 
-                            // swapping model
-                            string tempModel = carModelArr[j];
-                            carModelArr[j] = carModelArr[j + 1];
-                            carModelArr[j + 1] = tempModel;
-                            // swapping colour
-
-                            string tempColour = carColourArr[j];
-                            carColourArr[j] = carColourArr[j + 1];
-                            carColourArr[j + 1] = tempColour;
-                            // swapping condition
-
-                            string tempCondition = carConditionArr[j];
-                            carConditionArr[j] = carConditionArr[j + 1];
-                            carConditionArr[j + 1] = tempCondition;
-                            // swapping type
-
-                            string tempType = carTypeArr[j];
-                            carTypeArr[j] = carTypeArr[j + 1];
-                            carTypeArr[j + 1] = tempType;
-                            // swapping miles
-
-                            int tempMilling = carMillingArr[j];
-                            carMillingArr[j] = carMillingArr[j + 1];
-                            carMillingArr[j + 1] = tempMilling;
-                            // swapping paint condition
-
-                            string tempPaintcond = carPaintcondArr[j];
-                            carPaintcondArr[j] = carPaintcondArr[j + 1];
-                            carPaintcondArr[j + 1] = tempPaintcond;
-                            // swapping registry time
-
-                            string tempRegistryyr = carRegistryyrArr[j];
-                            carRegistryyrArr[j] = carRegistryyrArr[j + 1];
-                            carRegistryyrArr[j + 1] = tempRegistryyr;
-                            // swapping price
-
-                            double tempPrice = carPriceArr[j];
-                            carPriceArr[j] = carPriceArr[j + 1];
-                            carPriceArr[j + 1] = tempPrice;
-                            // swapping stock
-
-                            int tempStock = stockArr[j];
-                            stockArr[j] = stockArr[j + 1];
-                            stockArr[j + 1] = tempStock;
-                        }
-                    }
-                }
-            }
-            else if (useroption == 4)
-            {
-                // sort by name
-                for (int i = 0; i < currentcar - 1; i++)
-                {
-                    for (int j = 0; j < currentcar - i - 1; j++) // because last element already sorted after one loop
-                    {
-                        if (carNamesArr[j] > carNamesArr[j + 1])
-                        {
-                            string tempName = carNamesArr[j];
-                            carNamesArr[j] = carNamesArr[j + 1];
-                            carNamesArr[j + 1] = tempName;
-
-                            // swapping model
-                            string tempModel = carModelArr[j];
-                            carModelArr[j] = carModelArr[j + 1];
-                            carModelArr[j + 1] = tempModel;
-                            // swapping colour
-
-                            string tempColour = carColourArr[j];
-                            carColourArr[j] = carColourArr[j + 1];
-                            carColourArr[j + 1] = tempColour;
-                            // swapping condition
-
-                            string tempCondition = carConditionArr[j];
-                            carConditionArr[j] = carConditionArr[j + 1];
-                            carConditionArr[j + 1] = tempCondition;
-                            // swapping type
-
-                            string tempType = carTypeArr[j];
-                            carTypeArr[j] = carTypeArr[j + 1];
-                            carTypeArr[j + 1] = tempType;
-                            // swapping miles
-
-                            int tempMilling = carMillingArr[j];
-                            carMillingArr[j] = carMillingArr[j + 1];
-                            carMillingArr[j + 1] = tempMilling;
-                            // swapping paint condition
-
-                            string tempPaintcond = carPaintcondArr[j];
-                            carPaintcondArr[j] = carPaintcondArr[j + 1];
-                            carPaintcondArr[j + 1] = tempPaintcond;
-                            // swapping registry time
-
-                            string tempRegistryyr = carRegistryyrArr[j];
-                            carRegistryyrArr[j] = carRegistryyrArr[j + 1];
-                            carRegistryyrArr[j + 1] = tempRegistryyr;
-                            // swapping price
-
-                            double tempPrice = carPriceArr[j];
-                            carPriceArr[j] = carPriceArr[j + 1];
-                            carPriceArr[j + 1] = tempPrice;
-                            // swapping stock
-
-                            int tempStock = stockArr[j];
-                            stockArr[j] = stockArr[j + 1];
-                            stockArr[j + 1] = tempStock;
-                        }
-                    }
-                }
-            }
-            else if (useroption == 5)
-            {
-                // buy car
-                string buyCarName;
-                cout << "Enter the name of the car u want to buy: " << endl;
-                cin.ignore();
-                getline(cin, buyCarName);
-                bool found = false;
-                for (int i = 0; i < currentcar; i++)
-                {
-                    if (carNamesArr[i] == buyCarName)
-                    {
-                        found = true;
-                        if (stockArr[i] > 0)
-                        {
-                            cout << "Car is available! Proceeding to purchase..." << endl;
-                            stockArr[i]--;            // Decrease stock by 1
-                            carStatusArr[i] = "sold"; // Update status to sold
-                            cout << "Purchase successful! Thank you for buying " << carNamesArr[i] << "." << endl;
-                        }
-                        else
-                        {
-                            cout << "Sorry, this car is out of stock!" << endl;
-                        }
-                        break; // exit loop after finding the car
-                    }
-                }
-                if (!found)
-                {
-                    cout << "Car not found!" << endl;
-                }
-            }
-            else if (useroption == 6)
-            {
-                // view my purchases
-                cout << "== My Purchases ==\n";
-                bool hasPurchases = false;
-                for (int i = 0; i < currentcar; i++)
-                {
-                    if (carStatusArr[i] == "sold")
-                    {
-                        hasPurchases = true;
-                        cout << "Name: " << carNamesArr[i] << endl;
-                        cout << "Model: " << carModelArr[i] << endl;
-                        cout << "Color: " << carColourArr[i] << endl;
-                        cout << "Condition: " << carConditionArr[i] << endl;
-                        cout << "Type: " << carTypeArr[i] << endl;
-                        cout << "Mileage: " << carMillingArr[i] << endl;
-                        cout << "Paint: " << carPaintcondArr[i] << endl;
-                        cout << "Registry: " << carRegistryyrArr[i] << endl;
-                        cout << "Price: " << carPriceArr[i] << endl;
-                        cout << "Stock: " << stockArr[i] << endl;
-                        cout << "Status: " << carStatusArr[i] << endl;
-
-                        cout << "----------------------" << endl;
-                    }
-                }
-                if (!hasPurchases)
-                {
-                    cout << "You have not purchased any cars yet!" << endl;
-                }
-            }
-            else if (useroption == 7)
-            {
-                // view affordable cars
-                cout << "== Affordable Cars (Under 2,500,000) ==\n";
-                bool hasAffordableCars = false;
-                for (int i = 0; i < currentcar; i++)
-                {
-                    if (carPriceArr[i] < 2500000)
-                    {
-                        hasAffordableCars = true;
-                        cout << "Name: " << carNamesArr[i] << endl;
-                        cout << "Model: " << carModelArr[i] << endl;
-                        cout << "Color: " << carColourArr[i] << endl;
-                        cout << "Condition: " << carConditionArr[i] << endl;
-                        cout << "Type: " << carTypeArr[i] << endl;
-                        cout << "Mileage: " << carMillingArr[i] << endl;
-                        cout << "Paint: " << carPaintcondArr[i] << endl;
-                        cout << "Registry: " << carRegistryyrArr[i] << endl;
-                        cout << "Price: " << carPriceArr[i] << endl;
-                        cout << "Stock: " << stockArr[i] << endl;
-                        cout << "Status: " << carStatusArr[i] << endl;
-
-                        cout << "----------------------" << endl;
-                    }
-                }
-                if (!hasAffordableCars)
-                {
-                    cout << "No affordable cars available at the moment!" << endl;
-                }
-            }
-            else if (useroption == 8)
-            {
-                // check car availability
-                string checkCarName;
-                cout << "Enter the name of the car to check availability: " << endl;
-                cin.ignore();
-                getline(cin, checkCarName);
-                bool found = false;
-                for (int i = 0; i < currentcar; i++)
-                {
-                    if (carNamesArr[i] == checkCarName)
-                    {
-                        found = true;
-                        if (stockArr[i] > 0)
-                        {
-                            cout << "Car is available! Stock: " << stockArr[i] << endl;
-                        }
-                        else
-                        {
-                            cout << "Sorry, this car is out of stock!" << endl;
-                        }
-                        break; // exit loop after finding the car
-                    }
-                }
-                if (!found)
-                {
-                    cout << "Car not found!" << endl;
-                }
-            }
-            else if (useroption == 9)
-            {
-                // generate bill
-                string billCarName;
-                cout << "Enter the name of the car to generate bill: " << endl;
-                cin.ignore();
-                getline(cin, billCarName);
-                bool found = false;
-                for (int i = 0; i < currentcar; i++)
-                {
-                    if (carNamesArr[i] == billCarName)
-                    {
-                        found = true;
-                        if (carStatusArr[i] == "sold")
-                        {
-                            cout << "=== Bill ===" << endl;
-                            cout << "Car Name: " << carNamesArr[i] << endl;
+                            cout << "Name: " << carNamesArr[i] << endl;
                             cout << "Model: " << carModelArr[i] << endl;
+                            cout << "Color: " << carColourArr[i] << endl;
+                            cout << "Condition: " << carConditionArr[i] << endl;
+                            cout << "Type: " << carTypeArr[i] << endl;
+                            cout << "Mileage: " << carMillingArr[i] << endl;
+                            cout << "Paint: " << carPaintcondArr[i] << endl;
+                            cout << "Registry: " << carRegistryyrArr[i] << endl;
                             cout << "Price: " << carPriceArr[i] << endl;
-                            cout << "Thank you for your purchase!" << endl;
+                            cout << "Stock: " << stockArr[i] << endl;
+                            cout << "Status: " << carStatusArr[i] << endl;
                         }
-                        else
-                        {
-                            cout << "This car has not been purchased yet. No bill can be generated." << endl;
-                        }
-                        break; // exit loop after finding the car
+                    }
+                    if (!found)
+                    {
+                        cout << "Car not found!" << endl;
                     }
                 }
-                if (!found)
+                else if (useroption == 3)
                 {
-                    cout << "Car not found!" << endl;
+                    // sort by price
+                    for (int i = 0; i < currentcar - 1; i++)
+                    {
+                        for (int j = 0; j < currentcar - i - 1; j++)
+                        {
+                            if (carPriceArr[j] > carPriceArr[j + 1])
+                            {
+                                string tempName = carNamesArr[j];
+                                carNamesArr[j] = carNamesArr[j + 1];
+                                carNamesArr[j + 1] = tempName;
+
+                                // swapping model
+                                string tempModel = carModelArr[j];
+                                carModelArr[j] = carModelArr[j + 1];
+                                carModelArr[j + 1] = tempModel;
+                                // swapping colour
+
+                                string tempColour = carColourArr[j];
+                                carColourArr[j] = carColourArr[j + 1];
+                                carColourArr[j + 1] = tempColour;
+                                // swapping condition
+
+                                string tempCondition = carConditionArr[j];
+                                carConditionArr[j] = carConditionArr[j + 1];
+                                carConditionArr[j + 1] = tempCondition;
+                                // swapping type
+
+                                string tempType = carTypeArr[j];
+                                carTypeArr[j] = carTypeArr[j + 1];
+                                carTypeArr[j + 1] = tempType;
+                                // swapping miles
+
+                                int tempMilling = carMillingArr[j];
+                                carMillingArr[j] = carMillingArr[j + 1];
+                                carMillingArr[j + 1] = tempMilling;
+                                // swapping paint condition
+
+                                string tempPaintcond = carPaintcondArr[j];
+                                carPaintcondArr[j] = carPaintcondArr[j + 1];
+                                carPaintcondArr[j + 1] = tempPaintcond;
+                                // swapping registry time
+
+                                string tempRegistryyr = carRegistryyrArr[j];
+                                carRegistryyrArr[j] = carRegistryyrArr[j + 1];
+                                carRegistryyrArr[j + 1] = tempRegistryyr;
+                                // swapping price
+
+                                double tempPrice = carPriceArr[j];
+                                carPriceArr[j] = carPriceArr[j + 1];
+                                carPriceArr[j + 1] = tempPrice;
+                                // swapping stock
+
+                                int tempStock = stockArr[j];
+                                stockArr[j] = stockArr[j + 1];
+                                stockArr[j + 1] = tempStock;
+                            }
+                        }
+                    }
                 }
-            }
-            else if (useroption == 10)
-            {
-                // logout
-                continue; // go back to role selection menu
+                else if (useroption == 4)
+                {
+                    // sort by name
+                    for (int i = 0; i < currentcar - 1; i++)
+                    {
+                        for (int j = 0; j < currentcar - i - 1; j++) // because last element already sorted after one loop
+                        {
+                            if (carNamesArr[j] > carNamesArr[j + 1])
+                            {
+                                string tempName = carNamesArr[j];
+                                carNamesArr[j] = carNamesArr[j + 1];
+                                carNamesArr[j + 1] = tempName;
+
+                                // swapping model
+                                string tempModel = carModelArr[j];
+                                carModelArr[j] = carModelArr[j + 1];
+                                carModelArr[j + 1] = tempModel;
+                                // swapping colour
+
+                                string tempColour = carColourArr[j];
+                                carColourArr[j] = carColourArr[j + 1];
+                                carColourArr[j + 1] = tempColour;
+                                // swapping condition
+
+                                string tempCondition = carConditionArr[j];
+                                carConditionArr[j] = carConditionArr[j + 1];
+                                carConditionArr[j + 1] = tempCondition;
+                                // swapping type
+
+                                string tempType = carTypeArr[j];
+                                carTypeArr[j] = carTypeArr[j + 1];
+                                carTypeArr[j + 1] = tempType;
+                                // swapping miles
+
+                                int tempMilling = carMillingArr[j];
+                                carMillingArr[j] = carMillingArr[j + 1];
+                                carMillingArr[j + 1] = tempMilling;
+                                // swapping paint condition
+
+                                string tempPaintcond = carPaintcondArr[j];
+                                carPaintcondArr[j] = carPaintcondArr[j + 1];
+                                carPaintcondArr[j + 1] = tempPaintcond;
+                                // swapping registry time
+
+                                string tempRegistryyr = carRegistryyrArr[j];
+                                carRegistryyrArr[j] = carRegistryyrArr[j + 1];
+                                carRegistryyrArr[j + 1] = tempRegistryyr;
+                                // swapping price
+
+                                int tempPrice = carPriceArr[j];
+                                carPriceArr[j] = carPriceArr[j + 1];
+                                carPriceArr[j + 1] = tempPrice;
+                                // swapping stock
+
+                                int tempStock = stockArr[j];
+                                stockArr[j] = stockArr[j + 1];
+                                stockArr[j + 1] = tempStock;
+                            }
+                        }
+                    }
+                }
+                // currently one car record is being bought by one customermeans if stock is 3 ali buys ahmed buys the name of customer will be overwritten .
+                else if (useroption == 5)
+                {
+                    // buy car
+                    string buyCarName;
+                    cout << "Enter the name of the car u want to buy: " << endl;
+                    cin.ignore();
+                    getline(cin, buyCarName);
+                    bool found = false;
+                    for (int i = 0; i < currentcar; i++)
+                    {
+                        if (carNamesArr[i] == buyCarName)
+                        {
+                            found = true;
+                            if (stockArr[i] > 0)
+                            {
+                                cout << "Car is available! Proceeding to purchase..." << endl;
+                                stockArr[i]--; // Decrease stock by 1
+
+                                buyernameArr[i] = customerName;
+
+                                if (stockArr[i] == 0)
+                                {
+                                    carStatusArr[i] = "sold";
+                                }
+                                else
+                                {
+                                    carStatusArr[i] = "available";
+                                } // Update status to sold
+                                cout << "Purchase successful! Thank you for buying " << carNamesArr[i] << "." << endl;
+                            }
+                            else
+                            {
+                                cout << "Sorry, this car is out of stock!" << endl;
+                            }
+                            break; // exit loop after finding the car
+                        }
+                    }
+                    if (!found)
+                    {
+                        cout << "Car not found!" << endl;
+                    }
+                }
+                else if (useroption == 6)
+                {
+                    // view my purchases
+                    cout << "== My Purchases ==\n";
+                    bool hasPurchases = false;
+                    for (int i = 0; i < currentcar; i++)
+                    {
+                        if (buyernameArr[i] == customerName)
+                        {
+                            hasPurchases = true;
+                            cout << "Name: " << carNamesArr[i] << endl;
+                            cout << "Model: " << carModelArr[i] << endl;
+                            cout << "Color: " << carColourArr[i] << endl;
+                            cout << "Condition: " << carConditionArr[i] << endl;
+                            cout << "Type: " << carTypeArr[i] << endl;
+                            cout << "Mileage: " << carMillingArr[i] << endl;
+                            cout << "Paint: " << carPaintcondArr[i] << endl;
+                            cout << "Registry: " << carRegistryyrArr[i] << endl;
+                            cout << "Price: " << carPriceArr[i] << endl;
+                            cout << "Stock: " << stockArr[i] << endl;
+                            cout << "Status: " << carStatusArr[i] << endl;
+
+                            cout << "----------------------" << endl;
+                        }
+                    }
+                    if (!hasPurchases)
+                    {
+                        cout << "You have not purchased any cars yet!" << endl;
+                    }
+                }
+                else if (useroption == 7)
+                {
+                    // view affordable cars
+                    cout << "== Affordable Cars (Under 2,500,000) ==\n";
+                    bool hasAffordableCars = false;
+                    for (int i = 0; i < currentcar; i++)
+                    {
+                        if (carPriceArr[i] < 2500000)
+                        {
+                            hasAffordableCars = true;
+                            cout << "Name: " << carNamesArr[i] << endl;
+                            cout << "Model: " << carModelArr[i] << endl;
+                            cout << "Color: " << carColourArr[i] << endl;
+                            cout << "Condition: " << carConditionArr[i] << endl;
+                            cout << "Type: " << carTypeArr[i] << endl;
+                            cout << "Mileage: " << carMillingArr[i] << endl;
+                            cout << "Paint: " << carPaintcondArr[i] << endl;
+                            cout << "Registry: " << carRegistryyrArr[i] << endl;
+                            cout << "Price: " << carPriceArr[i] << endl;
+                            cout << "Stock: " << stockArr[i] << endl;
+                            cout << "Status: " << carStatusArr[i] << endl;
+
+                            cout << "----------------------" << endl;
+                        }
+                    }
+                    if (!hasAffordableCars)
+                    {
+                        cout << "No affordable cars available at the moment!" << endl;
+                    }
+                }
+                else if (useroption == 8)
+                {
+                    // check car availability
+                    string checkCarName;
+                    cout << "Enter the name of the car to check availability: " << endl;
+                    cin.ignore();
+                    getline(cin, checkCarName);
+                    bool found = false;
+                    for (int i = 0; i < currentcar; i++)
+                    {
+                        if (carNamesArr[i] == checkCarName)
+                        {
+                            found = true;
+                            if (stockArr[i] > 0)
+                            {
+                                cout << "Car is available! Stock: " << stockArr[i] << endl;
+                            }
+                            else
+                            {
+                                cout << "Sorry, this car is out of stock!" << endl;
+                            }
+                            break; // exit loop after finding the car
+                        }
+                    }
+                    if (!found)
+                    {
+                        cout << "Car not found!" << endl;
+                    }
+                }
+                else if (useroption == 9)
+                {
+                    // generate bill
+                    string billCarName;
+                    cout << "Enter the name of the car to generate bill: " << endl;
+                    cin.ignore();
+                    getline(cin, billCarName);
+                    bool found = false;
+                    for (int i = 0; i < currentcar; i++)
+                    {
+                        if (carNamesArr[i] == billCarName)
+                        {
+                            found = true;
+                            if (buyernameArr[i] == customerName)
+                            {
+                                cout << "=== Bill ===" << endl;
+                                cout << "Car Name: " << carNamesArr[i] << endl;
+                                cout << "Model: " << carModelArr[i] << endl;
+                                cout << "Price: " << carPriceArr[i] << endl;
+                                cout << "Thank you for your purchase!" << endl;
+                            }
+                            else
+                            {
+                                cout << "This car has not been purchased yet. No bill can be generated." << endl;
+                            }
+                            break; // exit loop after finding the car
+                        }
+                    }
+                    if (!found)
+                    {
+                        cout << "Car not found!" << endl;
+                    }
+                }
+                else if (useroption == 10)
+                {
+                    // logout
+                    continue; // go back to role selection menu
+                }
             }
         }
         else if (role == 3)
@@ -912,4 +939,5 @@ int main()
             cout << "you chosed an invalid option!" << endl;
         }
     }
+    return 0;
 }
